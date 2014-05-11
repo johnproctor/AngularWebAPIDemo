@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myDemoApp">
+<head>
+    <title>Demo Angular and Web API page</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-controller="PageController">
+    <h1 ng-bind="Model.SiteName"></h1>
+
+    <p>Select something from the first dropdown to see a second drop down:</p>
+
+    <select ng-model="SelectedCountry"
+            ng-options="item for item in Model.Countries"
+            ng-change="OnCountrySelected()"></select>
+
+    <select ng-show="CountrySelected"
+            ng-model="SelectedProgram"
+            ng-options="item for item in Model.Programs"></select>
+
+    <script src="Scripts/myAngular.js"></script>
+
+</body>
+</html>
